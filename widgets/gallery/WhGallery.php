@@ -9,10 +9,10 @@
  * @copyright Copyright &copy; 2amigos.us 2013-
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
  * @package YiiWheels.widgets.gallery
- * @uses YiiStrap.helpers.TbArray
- * @uses YiiStrap.helpers.TbHtml
+ * @uses YiiStrap.helpers.BsArray
+ * @uses YiiStrap.helpers.BsHtml
  */
-Yii::import('bootstrap.helpers.TbArray');
+Yii::import('bootstrap.helpers.BsArray');
 
 class WhGallery extends CWidget
 {
@@ -54,7 +54,7 @@ class WhGallery extends CWidget
 	 */
 	public function init()
 	{
-		$this->htmlOptions['id'] = TbArray::getValue('id', $this->htmlOptions, $this->getId());
+		$this->htmlOptions['id'] = BsArray::getValue('id', $this->htmlOptions, $this->getId());
 		$this->pluginOptions['container'] = '#' . $this->htmlOptions['id'] . '-gallery';
 		$this->attachBehavior('ywplugin', array('class' => 'yiiwheels.behaviors.WhPlugin'));
 		parent::init();
@@ -81,9 +81,9 @@ class WhGallery extends CWidget
 	{
 		echo CHtml::openTag('div', $this->htmlOptions);
 		foreach ($this->items as $item) {
-			$url = TbArray::getValue('url', $item, '#');
-			$src = TbArray::getValue('src', $item, '#');
-			$options = TbArray::getValue('options', $item );
+			$url = BsArray::getValue('url', $item, '#');
+			$src = BsArray::getValue('src', $item, '#');
+			$options = BsArray::getValue('options', $item );
 			echo CHtml::link(CHtml::image($src), $url, $options);
 		}
 		echo CHtml::closeTag('div');
@@ -99,7 +99,7 @@ class WhGallery extends CWidget
 			'class' => 'blueimp-gallery'
 		);
 		if($this->displayControls) {
-			TbHtml::addCssClass('blueimp-gallery-controls', $options);
+			BsHtml::addCssClass('blueimp-gallery-controls', $options);
 		}
 		echo CHtml::openTag('div', $options);
 		echo '<div class="slides"></div>

@@ -7,10 +7,10 @@
  * @copyright Copyright &copy; 2amigos.us 2013-
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
  * @package YiiWheels.widgets.ace
- * @uses Yiistrap.helpers.TbHtml
+ * @uses Yiistrap.helpers.BsHtml
  */
-Yii::import('bootstrap.helpers.TbHtml');
-Yii::import('bootstrap.helpers.TbArray');
+Yii::import('bootstrap.helpers.BsHtml');
+Yii::import('bootstrap.helpers.BsArray');
 
 class WhAceEditor extends CInputWidget
 {
@@ -74,8 +74,8 @@ class WhAceEditor extends CInputWidget
     {
         list($name, $id) = $this->resolveNameID();
 
-        TbArray::defaultValue('id', $id, $this->htmlOptions);
-        TbArray::defaultValue('name', $name, $this->htmlOptions);
+        BsArray::defaultValue('id', $id, $this->htmlOptions);
+        BsArray::defaultValue('name', $name, $this->htmlOptions);
 
         $tagOptions = $this->htmlOptions;
 
@@ -109,14 +109,14 @@ class WhAceEditor extends CInputWidget
 
         $cs->registerScriptFile($assetsUrl . '/js/ace.js', CClientScript::POS_END);
 
-        $id = TbArray::getValue('id', $this->htmlOptions, $this->getId());
+        $id = BsArray::getValue('id', $this->htmlOptions, $this->getId());
 
         /* Global value that will hold the editor */
         $cs->registerScript(uniqid(__CLASS__ . '#' . $id, true), 'var ' . $id . ';', CClientScript::POS_HEAD);
 
         ob_start();
         /* initialize plugin */
-        $selector = TbArray::getValue('id', $this->htmlOptions, $this->getId());
+        $selector = BsArray::getValue('id', $this->htmlOptions, $this->getId());
 
         echo $selector . '= ace.edit("' . $id . '");' . PHP_EOL;
         echo $selector . '.setTheme("ace/theme/' . $this->theme . '");' . PHP_EOL;

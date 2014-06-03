@@ -9,8 +9,8 @@
  * @copyright Copyright &copy; 2amigos.us 2013-
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
  * @package YiiWheels.widgets.gallery
- * @uses YiiStrap.helpers.TbArray
- * @uses YiiStrap.helpers.TbHtml
+ * @uses YiiStrap.helpers.BsArray
+ * @uses YiiStrap.helpers.BsHtml
  */
 Yii::import('yiiwheels.widgets.gallery.WhCarousel');
 
@@ -49,7 +49,7 @@ class WhVideoCarousel extends WhCarousel
 			'class' => 'blueimp-gallery blueimp-gallery-carousel'
 		);
 		if($this->displayControls) {
-			TbHtml::addCssClass('blueimp-gallery-controls', $options);
+			BsHtml::addCssClass('blueimp-gallery-controls', $options);
 		}
 		echo CHtml::openTag('div', $options);
 		echo '<div class="slides"></div>

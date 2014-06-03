@@ -6,10 +6,10 @@
  * @copyright Copyright &copy; 2amigos.us 2013-
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
  * @package YiiWheels.widgets.multiselect
- * @uses YiiStrap.helpers.TbArray
+ * @uses YiiStrap.helpers.BsArray
  */
 
-Yii::import('bootstrap.helpers.TbArray');
+Yii::import('bootstrap.helpers.BsArray');
 
 class WhMultiSelect extends CInputWidget
 {
@@ -58,8 +58,8 @@ class WhMultiSelect extends CInputWidget
     {
         list($name, $id) = $this->resolveNameID();
 
-        TbArray::defaultValue('id', $id, $this->htmlOptions);
-        TbArray::defaultValue('name', $name, $this->htmlOptions);
+        BsArray::defaultValue('id', $id, $this->htmlOptions);
+        BsArray::defaultValue('name', $name, $this->htmlOptions);
 
         // fixes #32: 'multiple' will be forced later in jQuery plugin
         $this->htmlOptions['multiple'] = 'multiple';
@@ -88,7 +88,7 @@ class WhMultiSelect extends CInputWidget
         $cs->registerScriptFile($assetsUrl . '/js/bootstrap-multiselect.js');
 
         /* initialize plugin */
-        $selector = '#' . TbArray::getValue('id', $this->htmlOptions, $this->getId());
+        $selector = '#' . BsArray::getValue('id', $this->htmlOptions, $this->getId());
 
         $this->getApi()->registerPlugin('multiselect', $selector, $this->pluginOptions);
         $this->getApi()->registerEvents($selector, $this->events);

@@ -6,11 +6,11 @@
  * @copyright Copyright &copy; 2amigos.us 2013-
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
  * @package YiiWheels.widgets.formhelpers
- * @uses YiiStrap.helpers.TbArray
- * @uses YiiStrap.helpers.TbHtml
+ * @uses YiiStrap.helpers.BsArray
+ * @uses YiiStrap.helpers.BsHtml
  */
-Yii::import('bootstrap.helpers.TbArray');
-Yii::import('bootstrap.helpers.TbHtml');
+Yii::import('bootstrap.helpers.BsArray');
+Yii::import('bootstrap.helpers.BsHtml');
 
 class WhCountries extends CInputWidget
 {
@@ -49,7 +49,7 @@ class WhCountries extends CInputWidget
 
 		$this->attachBehavior('ywplugin', array('class' => 'yiiwheels.behaviors.WhPlugin'));
 
-		TbHtml::addCssClass('bfh-countries', $this->htmlOptions);
+		BsHtml::addCssClass('bfh-countries', $this->htmlOptions);
 	}
 
 	/**
@@ -68,8 +68,8 @@ class WhCountries extends CInputWidget
 	{
 		list($name, $id) = $this->resolveNameID();
 
-		TbArray::defaultValue('id', $id, $this->htmlOptions);
-		TbArray::defaultValue('name', $name, $this->htmlOptions);
+		BsArray::defaultValue('id', $id, $this->htmlOptions);
+		BsArray::defaultValue('name', $name, $this->htmlOptions);
 
 		if ($this->useHelperSelectBox) {
 			$select = Yii::createComponent(CMap::mergeArray($this->helperOptions, array(
@@ -145,7 +145,7 @@ class WhCountries extends CInputWidget
 
 		/* initialize plugin */
 		if (!$this->useHelperSelectBox) {
-			$selector = '#' . TbArray::getValue('id', $this->htmlOptions, $this->getId());
+			$selector = '#' . BsArray::getValue('id', $this->htmlOptions, $this->getId());
 			$this->getApi()->registerPlugin('bfhcountries', $selector, $this->pluginOptions);
 		}
 	}

@@ -6,10 +6,10 @@
  * @copyright Copyright &copy; 2amigos.us 2013-
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
  * @package YiiWheels.widgets.maskmoney
- * @uses YiiStrap.helpers.TbArray
+ * @uses YiiStrap.helpers.BsArray
  */
 
-Yii::import('bootstrap.helpers.TbArray');
+Yii::import('bootstrap.helpers.BsArray');
 
 class WhMaskMoney extends CInputWidget
 {
@@ -43,8 +43,8 @@ class WhMaskMoney extends CInputWidget
     {
         list($name, $id) = $this->resolveNameID();
 
-        TbArray::defaultValue('id', $id, $this->htmlOptions);
-        TbArray::defaultValue('name', $name, $this->htmlOptions);
+        BsArray::defaultValue('id', $id, $this->htmlOptions);
+        BsArray::defaultValue('name', $name, $this->htmlOptions);
 
         if ($this->hasModel()) {
             echo CHtml::activeTextField($this->model, $this->attribute, $this->htmlOptions);
@@ -68,7 +68,7 @@ class WhMaskMoney extends CInputWidget
         $cs->registerScriptFile($assetsUrl . '/js/jquery.maskmoney.js');
 
         /* initialize plugin */
-        $selector = '#' . TbArray::getValue('id', $this->htmlOptions, $this->getId());
+        $selector = '#' . BsArray::getValue('id', $this->htmlOptions, $this->getId());
 
         $this->getApi()->registerPlugin('maskMoney', $selector, $this->pluginOptions);
     }

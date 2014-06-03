@@ -8,11 +8,11 @@
  * @copyright Copyright &copy; 2amigos.us 2013-
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
  * @package YiiWheels.widgets.switch
- * @uses YiiStrap.helpers.TbArray
- * @uses YiiStrap.helpers.TbHtml
+ * @uses YiiStrap.helpers.BsArray
+ * @uses YiiStrap.helpers.BsHtml
  */
-Yii::import('bootstrap.helpers.TbArray');
-Yii::import('bootstrap.helpers.TbHtml');
+Yii::import('bootstrap.helpers.BsArray');
+Yii::import('bootstrap.helpers.BsHtml');
 
 class WhSwitch extends CInputWidget
 {
@@ -86,8 +86,8 @@ class WhSwitch extends CInputWidget
 		}
 		$this->attachBehavior('ywplugin', array('class' => 'yiiwheels.behaviors.WhPlugin'));
 
-		TbHtml::addCssClass('make-switch', $this->pluginOptions);
-		TbHtml::addCssClass('switch-' . $this->size, $this->pluginOptions);
+		BsHtml::addCssClass('make-switch', $this->pluginOptions);
+		BsHtml::addCssClass('switch-' . $this->size, $this->pluginOptions);
 		if(!$this->animated) {
 			$this->pluginOptions['data-animated'] = 'false';
 		}
@@ -114,8 +114,8 @@ class WhSwitch extends CInputWidget
 	{
 		list($name, $id) = $this->resolveNameID();
 
-		TbArray::defaultValue('id', $id, $this->htmlOptions);
-		TbArray::defaultValue('name', $name, $this->htmlOptions);
+		BsArray::defaultValue('id', $id, $this->htmlOptions);
+		BsArray::defaultValue('name', $name, $this->htmlOptions);
 
 		$this->pluginOptions['id'] = $this->htmlOptions['id'] . '_switch';
 		echo CHtml::openTag('div', $this->pluginOptions);
@@ -154,7 +154,7 @@ class WhSwitch extends CInputWidget
 		if($this->events)
 		{
 			/* initialize plugin */
-			$selector = '#' . TbArray::getValue('id', $this->pluginOptions);
+			$selector = '#' . BsArray::getValue('id', $this->pluginOptions);
 
 			$this->getApi()->registerEvents($selector, $this->events);
 		}

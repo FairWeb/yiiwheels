@@ -6,11 +6,11 @@
  * @copyright Copyright &copy; 2amigos.us 2013-
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
  * @package YiiWheels.widgets.formhelpers
- * @uses YiiStrap.helpers.TbArray
- * @uses YiiStrap.helpers.TbHtml
+ * @uses YiiStrap.helpers.BsArray
+ * @uses YiiStrap.helpers.BsHtml
  */
-Yii::import('bootstrap.helpers.TbArray');
-Yii::import('bootstrap.helpers.TbHtml');
+Yii::import('bootstrap.helpers.BsArray');
+Yii::import('bootstrap.helpers.BsHtml');
 
 class WhDatePickerHelper extends CInputWidget
 {
@@ -40,7 +40,7 @@ class WhDatePickerHelper extends CInputWidget
 
 		$this->attachBehavior('ywplugin', array('class' => 'yiiwheels.behaviors.WhPlugin'));
 
-		TbHtml::addCssClass('bfh-datepicker', $this->htmlOptions);
+		BsHtml::addCssClass('bfh-datepicker', $this->htmlOptions);
 		$this->htmlOptions['data-format'] = $this->format;
 		$this->htmlOptions['data-date'] = $this->hasModel()
 			? $this->model->{$this->attribute}
@@ -69,15 +69,15 @@ class WhDatePickerHelper extends CInputWidget
 
 		list($name, $id) = $this->resolveNameID();
 
-		TbArray::defaultValue('id', $id, $this->htmlOptions);
-		TbArray::defaultValue('name', $name, $this->htmlOptions);
+		BsArray::defaultValue('id', $id, $this->htmlOptions);
+		BsArray::defaultValue('name', $name, $this->htmlOptions);
 
 		echo CHtml::openTag('div', $this->htmlOptions);
 		echo CHtml::openTag('div', array(
 			'class' => 'input-prepend bfh-datepicker-toggle',
 			'data-toggle' => 'bfh-datepicker'
 		));
-		echo CHtml::tag('span', array('class' => 'add-on'), TbHtml::icon(TbHtml::ICON_CALENDAR));
+		echo CHtml::tag('span', array('class' => 'add-on'), BsHtml::icon(BsHtml::ICON_CALENDAR));
 		if ($this->hasModel()) {
 			echo CHtml::activeTextField($this->model, $this->attribute, $this->inputOptions);
 		} else {
@@ -127,7 +127,7 @@ class WhDatePickerHelper extends CInputWidget
 		$cs->registerScriptFile($assetsUrl . '/js/bootstrap-formhelpers-datepicker.js');
 
 		/* initialize plugin */
-		// $selector = '#' . TbArray::getValue('id', $this->htmlOptions, $this->getId());
+		// $selector = '#' . BsArray::getValue('id', $this->htmlOptions, $this->getId());
 		// $this->getApi()->registerPlugin('bfhdatepicker', $selector, $this->pluginOptions);
 
 	}

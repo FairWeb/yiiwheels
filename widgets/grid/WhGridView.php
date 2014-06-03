@@ -13,10 +13,10 @@
  * @copyright Copyright &copy; 2amigos.us 2013-
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
  * @package YiiWheels.widgets.grid
- * @uses Yiistrap.widgets.TbHtml
+ * @uses Yiistrap.widgets.BsHtml
  * @uses Yiistrap.widgets.TbGridView
  */
-Yii::import('bootstrap.widgets.TbHtml');
+Yii::import('bootstrap.widgets.BsHtml');
 Yii::import('bootstrap.widgets.TbGridView');
 
 class WhGridView extends TbGridView
@@ -265,14 +265,14 @@ class WhGridView extends TbGridView
 			}
 		}
 
-		echo TbHtml::openTag('tr', $htmlOptions);
+		echo BsHtml::openTag('tr', $htmlOptions);
 		foreach ($this->columns as $column) {
 			echo $this->displayExtendedSummary && !empty($this->extendedSummary['columns']) ? $this->parseColumnValue(
 				$column,
 				$row
 			) : $column->renderDataCell($row);
 		}
-		echo TbHtml::closeTag('tr');
+		echo BsHtml::closeTag('tr');
 	}
 
 	/**
@@ -285,7 +285,7 @@ class WhGridView extends TbGridView
 		} else {
 			$this->extendedSummaryOptions['class'] .= ' ' . $this->extendedSummaryCssClass;
 		}
-		echo '<div ' . TbHtml::renderAttributes($this->extendedSummaryOptions) . '></div>';
+		echo '<div ' . BsHtml::renderAttributes($this->extendedSummaryOptions) . '></div>';
 	}
 
 	/**

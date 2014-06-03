@@ -7,7 +7,7 @@
  * @copyright Copyright &copy; 2amigos.us 2013-
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
  * @package YiiWheels.widgets.box
- * @uses YiiStrap.helpers.TbHtml
+ * @uses YiiStrap.helpers.BsHtml
  */
 class WhBox extends CWidget
 {
@@ -56,7 +56,7 @@ class WhBox extends CWidget
      * which has the following format:
      * <pre>
      *     array(
-     *      TbHtml::button('Primary', array('color' => TbHtml::BUTTON_COLOR_PRIMARY))
+     *      BsHtml::button('Primary', array('color' => BsHtml::BUTTON_COLOR_PRIMARY))
      *      ...
      * )
      * </pre>

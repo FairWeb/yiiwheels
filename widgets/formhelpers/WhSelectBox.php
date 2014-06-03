@@ -6,11 +6,11 @@
  * @copyright Copyright &copy; 2amigos.us 2013-
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
  * @package YiiWheels.widgets.formhelpers
- * @uses YiiStrap.helpers.TbArray
- * @uses YiiStrap.helpers.TbHtml
+ * @uses YiiStrap.helpers.BsArray
+ * @uses YiiStrap.helpers.BsHtml
  */
-Yii::import('bootstrap.helpers.TbArray');
-Yii::import('bootstrap.helpers.TbHtml');
+Yii::import('bootstrap.helpers.BsArray');
+Yii::import('bootstrap.helpers.BsHtml');
 
 class WhSelectBox extends CInputWidget
 {
@@ -67,10 +67,10 @@ class WhSelectBox extends CInputWidget
 	{
 		list($name, $id) = $this->resolveNameID();
 
-		TbArray::defaultValue('id', $id, $this->htmlOptions);
-		TbArray::defaultValue('name', $name, $this->htmlOptions);
+		BsArray::defaultValue('id', $id, $this->htmlOptions);
+		BsArray::defaultValue('name', $name, $this->htmlOptions);
 
-		TbHtml::addCssClass('bfh-selectbox', $this->wrapperOptions);
+		BsHtml::addCssClass('bfh-selectbox', $this->wrapperOptions);
 		echo CHtml::openTag('div', $this->wrapperOptions);
 		if ($this->hasModel()) {
 			echo CHtml::activeHiddenField($this->model, $this->attribute, $this->htmlOptions);

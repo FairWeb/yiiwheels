@@ -6,9 +6,9 @@
  * @copyright Copyright &copy; 2amigos.us 2013-
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
  * @package YiiWheels.widgets.redactor
- * @uses YiiStrap.helpers.TbArray
+ * @uses YiiStrap.helpers.BsArray
  */
-Yii::import('bootstrap.helpers.TbArray');
+Yii::import('bootstrap.helpers.BsArray');
 
 class WhRedactor extends CInputWidget
 {
@@ -32,12 +32,12 @@ class WhRedactor extends CInputWidget
 
         $this->attachBehavior('ywplugin', array('class' => 'yiiwheels.behaviors.WhPlugin'));
 
-        if (!$style = TbArray::popValue('style', $this->htmlOptions, '')) {
+        if (!$style = BsArray::popValue('style', $this->htmlOptions, '')) {
             $this->htmlOptions['style'] = $style;
         }
 
-        $width                      = TbArray::getValue('width', $this->htmlOptions, '100%');
-        $height                     = TbArray::popValue('height', $this->htmlOptions, '450px');
+        $width                      = BsArray::getValue('width', $this->htmlOptions, '100%');
+        $height                     = BsArray::popValue('height', $this->htmlOptions, '450px');
         $this->htmlOptions['style'] = "width:{$width};height:{$height};" . $this->htmlOptions['style'];
     }
 
@@ -57,8 +57,8 @@ class WhRedactor extends CInputWidget
     {
         list($name, $id) = $this->resolveNameID();
 
-        TbArray::defaultValue('id', $id, $this->htmlOptions);
-        TbArray::defaultValue('name', $name, $this->htmlOptions);
+        BsArray::defaultValue('id', $id, $this->htmlOptions);
+        BsArray::defaultValue('name', $name, $this->htmlOptions);
 
         if ($this->hasModel()) {
             echo CHtml::activeTextArea($this->model, $this->attribute, $this->htmlOptions);
@@ -89,7 +89,7 @@ class WhRedactor extends CInputWidget
         $cs->registerScriptFile($assetsUrl . '/js/' . $script, CClientScript::POS_END);
 
         /* register language */
-        $language = TbArray::getValue('lang', $this->pluginOptions);
+        $language = BsArray::getValue('lang', $this->pluginOptions);
         if (!empty($language) && $language != 'en') {
             $cs->registerScriptFile($assetsUrl . '/js/langs/' . $language . '.js', CClientScript::POS_END);
         }
@@ -98,7 +98,7 @@ class WhRedactor extends CInputWidget
         $this->registerPlugins($assetsUrl);
 
         /* initialize plugin */
-        $selector = '#' . TbArray::getValue('id', $this->htmlOptions, $this->getId());
+        $selector = '#' . BsArray::getValue('id', $this->htmlOptions, $this->getId());
 
         $this->getApi()->registerPlugin('redactor', $selector, $this->pluginOptions);
     }

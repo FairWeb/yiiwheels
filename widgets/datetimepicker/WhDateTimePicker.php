@@ -8,9 +8,9 @@
  * @copyright Copyright &copy; 2amigos.us 2013-
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
  * @package YiiWheels.widgets.datetimepicker
- * @uses YiiStrap.helpers.TbArray
+ * @uses YiiStrap.helpers.BsArray
  */
-Yii::import('bootstrap.helpers.TbArray');
+Yii::import('bootstrap.helpers.BsArray');
 
 class WhDateTimePicker extends CInputWidget
 {
@@ -60,7 +60,7 @@ class WhDateTimePicker extends CInputWidget
 	public function init()
 	{
 		$this->attachBehavior('ywplugin', array('class' => 'yiiwheels.behaviors.WhPlugin'));
-		$this->htmlOptions['id'] = TbArray::getValue('id', $this->htmlOptions, $this->getId());
+		$this->htmlOptions['id'] = BsArray::getValue('id', $this->htmlOptions, $this->getId());
 		$this->htmlOptions['data-format'] = $this->format;
 	}
 
@@ -84,18 +84,18 @@ class WhDateTimePicker extends CInputWidget
 			list($name, $id) = $this->resolveNameID();
 
 			$options['id'] = $id . '_datetimepicker';
-			TbHtml::addCssClass('input-append', $options);
+			BsHtml::addCssClass('input-append', $options);
 
-			echo TbHtml::openTag('div', $options);
+			echo BsHtml::openTag('div', $options);
 			if ($this->hasModel()) {
-				echo TbHtml::activeTextField($this->model, $this->attribute, $this->htmlOptions);
+				echo BsHtml::activeTextField($this->model, $this->attribute, $this->htmlOptions);
 			} else {
-				echo TbHtml::textField($name, $this->value, $this->htmlOptions);
+				echo BsHtml::textField($name, $this->value, $this->htmlOptions);
 			}
-			echo TbHtml::openTag('span', array('class' => 'add-on'));
+			echo BsHtml::openTag('span', array('class' => 'add-on'));
 			echo '<i data-time-icon="' . $this->iconTime . '" data-date-icon="' . $this->iconDate . '"></i>';
-			echo TbHtml::closeTag('span');
-			echo TbHtml::closeTag('div');
+			echo BsHtml::closeTag('span');
+			echo BsHtml::closeTag('div');
 		}
 	}
 
@@ -123,7 +123,7 @@ class WhDateTimePicker extends CInputWidget
 		/* initialize plugin */
 		/* initialize plugin */
 		$selector = null === $this->selector
-			? '#' . TbArray::getValue('id', $this->htmlOptions, $this->getId()) . '_datetimepicker'
+			? '#' . BsArray::getValue('id', $this->htmlOptions, $this->getId()) . '_datetimepicker'
 			: $this->selector;
 
 		$this->getApi()->registerPlugin('datetimepicker', $selector, $this->pluginOptions);

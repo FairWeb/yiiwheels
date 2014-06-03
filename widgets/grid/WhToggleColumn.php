@@ -6,10 +6,10 @@
  * @copyright Copyright &copy; 2amigos.us 2013-
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
  * @package YiiWheels.widgets.toggle
- * @uses YiiStrap.helpers.TbHtml
+ * @uses YiiStrap.helpers.BsHtml
  * @uses YiiStrap.widgets.TbDataColumn
  */
-Yii::import('bootstrap.helpers.TbHtml');
+Yii::import('bootstrap.helpers.BsHtml');
 Yii::import('bootstrap.widgets.TbDataColumn');
 
 class WhToggleColumn extends TbDataColumn
@@ -223,12 +223,12 @@ function() {
             : '#';
 
         if (!$this->displayText) {
-            $htmlOptions          = TbArray::getValue('htmlOptions', $this->toggleOptions, array());
+            $htmlOptions          = BsArray::getValue('htmlOptions', $this->toggleOptions, array());
             $htmlOptions['title'] = $this->getButtonLabel($checked);
             $htmlOptions['rel']   = 'tooltip';
-            echo CHtml::link(TbHtml::icon($toggleOptions['icon']), $toggleOptions['url'], $htmlOptions);
+            echo CHtml::link(BsHtml::icon($toggleOptions['icon']), $toggleOptions['url'], $htmlOptions);
         } else {
-            echo TbHtml::button($this->getButtonLabel($checked), $toggleOptions);
+            echo BsHtml::button($this->getButtonLabel($checked), $toggleOptions);
         }
     }
 
@@ -239,7 +239,7 @@ function() {
     {
         $js = array();
 
-        $function = CJavaScript::encode(TbArray::popValue('click', $this->toggleOptions, ''));
+        $function = CJavaScript::encode(BsArray::popValue('click', $this->toggleOptions, ''));
 
         $class = preg_replace('/\s+/', '.', $this->toggleOptions['htmlOptions']['class']);
         $js[]  = "$(document).on('click','#{$this->grid->id} a.{$class}',$function);";

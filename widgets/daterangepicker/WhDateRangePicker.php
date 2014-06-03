@@ -8,9 +8,9 @@
  * @copyright Copyright &copy; 2amigos.us 2013-
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
  * @package YiiWheels.widgets.daterangepicker
- * @uses YiiStrap.helpers.TbArray
+ * @uses YiiStrap.helpers.BsArray
  */
-Yii::import('bootstrap.helpers.TbArray');
+Yii::import('bootstrap.helpers.BsArray');
 
 class WhDateRangePicker extends CInputWidget
 {
@@ -37,7 +37,7 @@ class WhDateRangePicker extends CInputWidget
     public function init()
     {
         $this->attachBehavior('ywplugin', array('class' => 'yiiwheels.behaviors.WhPlugin'));
-        $this->htmlOptions['id'] = TbArray::getValue('id', $this->htmlOptions, $this->getId());
+        $this->htmlOptions['id'] = BsArray::getValue('id', $this->htmlOptions, $this->getId());
     }
 
     /**
@@ -58,9 +58,9 @@ class WhDateRangePicker extends CInputWidget
             list($name, $id) = $this->resolveNameID();
 
             if ($this->hasModel()) {
-                echo TbHtml::activeTextField($this->model, $this->attribute, $this->htmlOptions);
+                echo BsHtml::activeTextField($this->model, $this->attribute, $this->htmlOptions);
             } else {
-                echo TbHtml::textField($name, $this->value, $this->htmlOptions);
+                echo BsHtml::textField($name, $this->value, $this->htmlOptions);
             }
 
             $this->setLocaleSettings();
@@ -124,7 +124,7 @@ class WhDateRangePicker extends CInputWidget
 
         /* initialize plugin */
         $selector = null === $this->selector
-            ? '#' . TbArray::getValue('id', $this->htmlOptions, $this->getId())
+            ? '#' . BsArray::getValue('id', $this->htmlOptions, $this->getId())
             : $this->selector;
 
         $callback = ($this->callback instanceof CJavaScriptExpression)

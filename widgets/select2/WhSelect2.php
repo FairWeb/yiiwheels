@@ -6,9 +6,9 @@
  * @copyright Copyright &copy; 2amigos.us 2013-
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
  * @package YiiWheels.widgets.select2
- * @uses YiiStrap.helpers.TbArray
+ * @uses YiiStrap.helpers.BsArray
  */
-Yii::import('bootstrap.helpers.TbArray');
+Yii::import('bootstrap.helpers.BsArray');
 
 class WhSelect2 extends CInputWidget
 {
@@ -66,18 +66,18 @@ class WhSelect2 extends CInputWidget
     {
         list($name, $id) = $this->resolveNameID();
 
-        TbArray::defaultValue('id', $id, $this->htmlOptions);
-        TbArray::defaultValue('name', $name, $this->htmlOptions);
+        BsArray::defaultValue('id', $id, $this->htmlOptions);
+        BsArray::defaultValue('name', $name, $this->htmlOptions);
 
         if ($this->hasModel()) {
             echo $this->asDropDownList ?
-                TbHtml::activeDropDownList($this->model, $this->attribute, $this->data, $this->htmlOptions) :
-                TbHtml::activeHiddenField($this->model, $this->attribute);
+                BsHtml::activeDropDownList($this->model, $this->attribute, $this->data, $this->htmlOptions) :
+                BsHtml::activeHiddenField($this->model, $this->attribute);
 
         } else {
             echo $this->asDropDownList ?
-                TbHtml::dropDownList($this->name, $this->value, $this->data, $this->htmlOptions) :
-                TbHtml::hiddenField($this->name, $this->value);
+                BsHtml::dropDownList($this->name, $this->value, $this->data, $this->htmlOptions) :
+                BsHtml::hiddenField($this->name, $this->value);
         }
     }
 
@@ -106,7 +106,7 @@ class WhSelect2 extends CInputWidget
         }
 
         /* initialize plugin */
-        $selector = '#' . TbArray::getValue('id', $this->htmlOptions, $this->getId());
+        $selector = '#' . BsArray::getValue('id', $this->htmlOptions, $this->getId());
 
         $this->getApi()->registerPlugin('select2', $selector, $this->pluginOptions, CClientScript::POS_READY);
         $this->getApi()->registerEvents($selector, $this->events, CClientScript::POS_READY);

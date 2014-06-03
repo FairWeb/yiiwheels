@@ -10,9 +10,9 @@
  * @copyright Copyright &copy; 2amigos.us 2013-
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
  * @package YiiWheels.widgets.highcharts
- * @uses YiiStrap.helpers.TbArray
+ * @uses YiiStrap.helpers.BsArray
  */
-Yii::import('bootstrap.helpers.TbArray');
+Yii::import('bootstrap.helpers.BsArray');
 
 class WhHtml5Editor extends CInputWidget
 {
@@ -47,12 +47,12 @@ class WhHtml5Editor extends CInputWidget
     
     	$this->attachBehavior('ywplugin', array('class' => 'yiiwheels.behaviors.WhPlugin'));
     
-    	if (!$style = TbArray::popValue('style', $this->htmlOptions, '')) {
+    	if (!$style = BsArray::popValue('style', $this->htmlOptions, '')) {
     		$this->htmlOptions['style'] = $style;
     	}
     
-    	$width                      = TbArray::getValue('width', $this->htmlOptions, '100%');
-    	$height                     = TbArray::popValue('height', $this->htmlOptions, '450px');
+    	$width                      = BsArray::getValue('width', $this->htmlOptions, '100%');
+    	$height                     = BsArray::popValue('height', $this->htmlOptions, '450px');
     	$this->htmlOptions['style'] = "width:{$width};height:{$height};" . $this->htmlOptions['style'];
     }
 
@@ -109,7 +109,7 @@ class WhHtml5Editor extends CInputWidget
         $this->normalizeStylesheetsProperty();
 
         /* initialize plugin */
-        $selector = '#' . TbArray::getValue('id', $this->htmlOptions, $this->getId());
+        $selector = '#' . BsArray::getValue('id', $this->htmlOptions, $this->getId());
 
         $this->getApi()->registerPlugin('wysihtml5', $selector, $this->pluginOptions);
 

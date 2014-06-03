@@ -23,7 +23,7 @@ class WhChart extends CBehavior
 	public function renderChartControlButtons()
 	{
 		echo '<div class="row-fluid">';
-		echo TbHtml::buttonGroup(array(
+		echo BsHtml::buttonGroup(array(
 			array(
 				'label' => Yii::t('zii', 'Display Grid'),
 				'url' => '#',
@@ -34,7 +34,7 @@ class WhChart extends CBehavior
 				'url' => '#',
 				'htmlOptions' => array('class' => $this->grid->getId() . '-grid-control chart')
 			),
-		), array('toggle' => TbHtml::BUTTON_TOGGLE_RADIO, 'style' => 'margin-bottom:5px', 'class' => 'pull-right'));
+		), array('toggle' => BsHtml::BUTTON_TOGGLE_RADIO, 'style' => 'margin-bottom:5px', 'class' => 'pull-right'));
 		echo '</div>';
 
 	}

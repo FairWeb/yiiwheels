@@ -8,7 +8,7 @@
  * @copyright Copyright &copy; 2amigos.us 2013-
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
  * @package YiiWheels.widgets.grid
- * @uses Yiistrap.widgets.TbHtml
+ * @uses Yiistrap.widgets.BsHtml
  * @uses Yiistrap.widgets.TbGridView
  *
  * @author         Vitaliy Potapov <noginsk@rambler.ru>
