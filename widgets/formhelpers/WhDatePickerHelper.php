@@ -77,7 +77,7 @@ class WhDatePickerHelper extends CInputWidget
 			'class' => 'input-prepend bfh-datepicker-toggle',
 			'data-toggle' => 'bfh-datepicker'
 		));
-		echo CHtml::tag('span', array('class' => 'add-on'), BsHtml::icon(BsHtml::ICON_CALENDAR));
+		echo CHtml::tag('span', array('class' => 'add-on'), BsHtml::icon(BsHtml::GLYPHICON_CALENDAR));
 		if ($this->hasModel()) {
 			echo CHtml::activeTextField($this->model, $this->attribute, $this->inputOptions);
 		} else {

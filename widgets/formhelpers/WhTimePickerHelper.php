@@ -68,7 +68,7 @@ class WhTimePickerHelper extends CInputWidget
 			'class' => 'input-prepend bfh-timepicker-toggle',
 			'data-toggle' => 'bfh-timepicker'
 		));
-		echo CHtml::tag('span', array('class' => 'add-on'), BsHtml::icon(BsHtml::ICON_TIME));
+		echo CHtml::tag('span', array('class' => 'add-on'), BsHtml::icon(BsHtml::GLYPHICON_TIME));
 		if ($this->hasModel()) {
 			echo CHtml::activeTextField($this->model, $this->attribute, $this->inputOptions);
 		} else {
