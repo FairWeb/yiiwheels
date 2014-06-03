@@ -9,16 +9,16 @@
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
  * @package YiiWheels.widgets.grid
  * @uses Yiistrap.widgets.BsHtml
- * @uses Yiistrap.widgets.TbGridView
+ * @uses Yiistrap.widgets.BsGridView
  *
  * @author         Vitaliy Potapov <noginsk@rambler.ru>
  * @version        1.1
  * @see            http://groupgridview.demopage.ru
  */
 
-Yii::import('bootstrap.widgets.TbGridView');
+Yii::import('bootstrap.widgets.BsGridView');
 
-class WhGroupGridView extends TbGridView
+class WhGroupGridView extends BsGridView
 {
 
 	const MERGE_SIMPLE = 'simple';

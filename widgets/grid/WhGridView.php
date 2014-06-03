@@ -2,7 +2,7 @@
 /**
  * WhGridView class
  *
- * This grid is an extended version of TbGridView.
+ * This grid is an extended version of BsGridView.
  *
  * Features are:
  *  - Display an extended summary of the records shown. The extended summary can be configured to any of the
@@ -14,12 +14,12 @@
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
  * @package YiiWheels.widgets.grid
  * @uses Yiistrap.widgets.BsHtml
- * @uses Yiistrap.widgets.TbGridView
+ * @uses Yiistrap.widgets.BsGridView
  */
 Yii::import('bootstrap.widgets.BsHtml');
-Yii::import('bootstrap.widgets.TbGridView');
+Yii::import('bootstrap.widgets.BsGridView');
 
-class WhGridView extends TbGridView
+class WhGridView extends BsGridView
 {
 	/**
 	 * @var bool $fixedHeader if set to true will keep the header fixed  position
