@@ -1,7 +1,7 @@
 <!-- The file upload form used as target for the file upload widget -->
 <?php echo CHtml::beginForm($this->url, 'post', $this->htmlOptions); ?>
 <div class="fileupload-buttonbar">
-	<div class="span7">
+	<div class="col-xs-7">
 		<!-- The fileinput-button span is used to style the file input field as button -->
 		<span class="btn btn-success fileinput-button"> <i class="icon-plus icon-white"></i> <span>Add files...</span>
 			<?php
@@ -25,7 +25,7 @@
 		</button>
 		<input type="checkbox" class="toggle">
 	</div>
-	<div class="span5">
+	<div class="col-xs-5">
 		<!-- The global progress bar -->
 		<div class="progress progress-success progress-striped active fade">
 			<div class="bar" style="width:0%;"></div>
