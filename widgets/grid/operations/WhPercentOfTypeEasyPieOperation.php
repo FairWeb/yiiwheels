@@ -22,7 +22,7 @@ class WhPercentOfTypeEasyPieOperation extends WhPercentOfTypeOperation
 
 	/**
 	 * @var string $template
-	 * @see TbOperation
+	 * @see BsOperation
 	 */
 	public $template = '<div style="clear:both">{label}: </div>{types}';
 

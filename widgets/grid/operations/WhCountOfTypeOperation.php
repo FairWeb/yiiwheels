@@ -64,7 +64,7 @@ class WhCountOfTypeOperation extends WhOperation
 
 	/**
 	 * (no phpDoc)
-	 * @see TbOperation
+	 * @see BsOperation
 	 *
 	 * @param $value
 	 *
@@ -84,7 +84,7 @@ class WhCountOfTypeOperation extends WhOperation
 
 	/**
 	 * (no phpDoc)
-	 * @see TbOperation
+	 * @see BsOperation
 	 * @return mixed|void
 	 */
 	public function displaySummary()

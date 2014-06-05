@@ -7,12 +7,12 @@
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
  * @package YiiWheels.widgets.toggle
  * @uses YiiStrap.helpers.BsHtml
- * @uses YiiStrap.widgets.TbDataColumn
+ * @uses YiiStrap.widgets.BsDataColumn
  */
 Yii::import('bootstrap.helpers.BsHtml');
-Yii::import('bootstrap.widgets.TbDataColumn');
+Yii::import('bootstrap.widgets.BsDataColumn');
 
-class WhToggleColumn extends TbDataColumn
+class WhToggleColumn extends BsDataColumn
 {
     /**
      * @var string the attribute name of the data model. Used for column sorting, filtering and to render the corresponding
@@ -99,7 +99,7 @@ class WhToggleColumn extends TbDataColumn
 
     /**
      * @var string Name of the action to call and toggle values
-     * @see bootstrap.action.TbToggleAction for an easy way to use with your controller
+     * @see bootstrap.action.BsToggleAction for an easy way to use with your controller
      */
     public $toggleAction = 'toggle';
 
@@ -116,7 +116,7 @@ class WhToggleColumn extends TbDataColumn
      * Example:
      * <pre>
      *  array(
-     *     class'=>'TbToggleColumn',
+     *     class'=>'BsToggleColumn',
      *     'afterToggle'=>'function(success,data){ if (success) alert("Toggled successfuly"); }',
      *  ),
      * </pre>

@@ -35,7 +35,7 @@ class WhPercentOfTypeGooglePieOperation extends WhPercentOfTypeOperation
 	protected $data = array();
 
 	/**
-	 * @see TbOperation
+	 * @see BsOperation
 	 * @return mixed|void
 	 */
 	public function displaySummary()

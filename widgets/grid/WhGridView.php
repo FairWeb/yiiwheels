@@ -43,10 +43,10 @@ class WhGridView extends BsGridView
 	/**
 	 * @var array $extendedSummary displays an extended summary version.
 	 * There are different types of summary types,
-	 * please, see {@link TbSumOperation}, {@link TbSumOfTypeOperation},{@link TbPercentOfTypeGooglePieOperation}
-	 * {@link TbPercentOfTypeOperation} and {@link TbPercentOfTypeEasyPieOperation}.
+	 * please, see {@link BsSumOperation}, {@link BsSumOfTypeOperation},{@link BsPercentOfTypeGooglePieOperation}
+	 * {@link BsPercentOfTypeOperation} and {@link BsPercentOfTypeEasyPieOperation}.
 	 *
-	 * The following is an example, please review the different types of TbOperation classes to find out more about
+	 * The following is an example, please review the different types of BsOperation classes to find out more about
 	 * its configuration parameters.
 	 *
 	 * <pre>
@@ -54,13 +54,13 @@ class WhGridView extends BsGridView
 	 *      'title' => '',      // the extended summary title
 	 *      'columns' => array( // the 'columns' that will be displayed at the extended summary
 	 *          'id' => array(  // column name "id"
-	 *              'class' => 'TbSumOperation', // what is the type of TbOperation we are going to display
+	 *              'class' => 'BsSumOperation', // what is the type of BsOperation we are going to display
 	 *              'label' => 'Sum of Ids'     // label is name of label of the resulted value (ie Sum of Ids:)
 	 *          ),
 	 *          'results' => array(   // column name "results"
-	 *              'class' => 'TbPercentOfTypeGooglePieOperation', // the type of TbOperation
+	 *              'class' => 'BsPercentOfTypeGooglePieOperation', // the type of BsOperation
 	 *              'label' => 'How Many Of Each? ', // the label of the operation
-	 *              'types' => array(               // TbPercentOfTypeGooglePieOperation "types" attributes
+	 *              'types' => array(               // BsPercentOfTypeGooglePieOperation "types" attributes
 	 *                  '0' => array('label' => 'zeros'),   // a value of "0" will be labelled "zeros"
 	 *                  '1' => array('label' => 'ones'),    // a value of "1" will be labelled "ones"
 	 *                  '2' => array('label' => 'twos'))    // a value of "2" will be labelled "twos"
@@ -112,7 +112,7 @@ class WhGridView extends BsGridView
 	protected $displayExtendedSummary;
 
 	/**
-	 * @var WhOperation[] $extendedSummaryTypes hold the current configured TbOperation that will process column values.
+	 * @var WhOperation[] $extendedSummaryTypes hold the current configured BsOperation that will process column values.
 	 */
 	protected $extendedSummaryTypes = array();
 
@@ -303,7 +303,7 @@ class WhGridView extends BsGridView
 				echo '<h3>' . $this->extendedSummary['title'] . '</h3>';
 			}
 			foreach ($this->extendedSummaryTypes as $summaryType) {
-				/** @var $summaryType TbOperation */
+				/** @var $summaryType BsOperation */
 				$summaryType->run();
 				echo '<br/>';
 			}

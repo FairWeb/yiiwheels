@@ -25,7 +25,7 @@ class YiiWheels extends CApplicationComponent
     public $assetsCss = array();
 
     /**
-     * @var TbApi $_api
+     * @var BsApi $_api
      */
     protected $_api;
 
@@ -65,7 +65,7 @@ class YiiWheels extends CApplicationComponent
 
     /**
      * Returns the core library (yiistrap) component
-     * @return TbApi
+     * @return BsApi
      */
     public function getApi()
     {

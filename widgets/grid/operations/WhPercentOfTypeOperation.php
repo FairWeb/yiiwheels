@@ -18,7 +18,7 @@ class WhPercentOfTypeOperation extends WhCountOfTypeOperation
 {
 	/**
 	 * @var string $typeTemplate
-	 * @see TbCountOfTypeOperation
+	 * @see BsCountOfTypeOperation
 	 */
 	public $typeTemplate = '{label}({value}%)';
 
@@ -30,7 +30,7 @@ class WhPercentOfTypeOperation extends WhCountOfTypeOperation
 
 	/**
 	 * @return mixed|void
-	 * @see TbOperation
+	 * @see BsOperation
 	 */
 	public function displaySummary()
 	{

@@ -33,7 +33,7 @@ class WhPlugin extends CBehavior
     }
 
     /**
-     * @return TbApi
+     * @return BsApi
      */
     public function getApi()
     {

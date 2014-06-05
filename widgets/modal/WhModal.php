@@ -12,7 +12,7 @@
  * @package YiiWheels.widgets.modal
  */
 
-class WhModal extends TbModal
+class WhModal extends BsModal
 {
 
     /**

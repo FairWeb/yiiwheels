@@ -9,11 +9,11 @@
  * @copyright Copyright &copy; 2amigos.us 2013-
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
  * @package YiiWheels.widgets.grid
- * @uses Yiistrap.widgets.TbDataColumn
+ * @uses Yiistrap.widgets.BsDataColumn
  */
-Yii::import('bootstrap.widgets.TbDataColumn');
+Yii::import('bootstrap.widgets.BsDataColumn');
 
-class WhRelationalColumn extends TbDataColumn
+class WhRelationalColumn extends BsDataColumn
 {
     /**
      * @var string $url the route to call via AJAX to get the data from
@@ -45,7 +45,7 @@ class WhRelationalColumn extends TbDataColumn
      * </ul>
      * Note: This handler is not called for JSONP requests.
      *
-     * Example (add in a call to TbRelationalColumn):
+     * Example (add in a call to BsRelationalColumn):
      * <pre>
      *  ...
      *  'afterAjaxUpdate'=>'js:function(tr,rowid, data){ console.log(rowid); }',

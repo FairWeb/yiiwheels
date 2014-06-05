@@ -284,7 +284,7 @@ class WhGroupGridView extends BsGridView
 
 	/**
 	 * Returns array of rendered column values (TD)
-	 * @param string[]|TbDataColumn[] $columns
+	 * @param string[]|BsDataColumn[] $columns
 	 * @param CActiveRecord $data
 	 * @param mixed $rowIndex
 	 * @throws CException
@@ -293,7 +293,7 @@ class WhGroupGridView extends BsGridView
 	private function getRowValues($columns, $data, $rowIndex)
 	{
 		foreach ($columns as $column) {
-			if ($column instanceOf TbDataColumn) {
+			if ($column instanceOf BsDataColumn) {
 				$result[$column->name] = $this->getDataCellContent($column, $data, $rowIndex);
 			} elseif (is_string($column)) {
 				if (is_array($data) && array_key_exists($column, $data)) {
@@ -344,7 +344,7 @@ class WhGroupGridView extends BsGridView
 	/**
 	 * need to rewrite this function as it is protected in CDataColumn: it is strange as all methods inside are public
 	 *
-	 * @param TbDataColumn $column
+	 * @param BsDataColumn $column
 	 * @param mixed $row
 	 * @param mixed $data
 	 *
