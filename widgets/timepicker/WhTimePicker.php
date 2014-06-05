@@ -100,7 +100,7 @@ class WhTimePicker extends CInputWidget
         /* @var $cs CClientScript */
         $cs = Yii::app()->getClientScript();
 
-        $cs->registerCssFile($assetsUrl . '/css/bootstrap-timepicker.css'); 
+        $cs->registerCssFile($assetsUrl . '/css/bootstrap-timepicker.css');
         $cs->registerScriptFile($assetsUrl . '/js/bootstrap-timepicker.min.js');
 
         /* initialize plugin */
