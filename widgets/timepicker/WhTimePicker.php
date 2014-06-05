@@ -76,7 +76,11 @@ class WhTimePicker extends CInputWidget
 
         BsArray::defaultValue('id', $id, $this->htmlOptions);
         BsArray::defaultValue('name', $name, $this->htmlOptions);
-        $this->htmlOptions['class'] .= ' form-control';
+        if(!isset($this->htmlOptions['class'])){
+            $this->htmlOptions['class'] = 'form-control';
+        }else{
+            $this->htmlOptions['class'] .= ' form-control';
+        }
 
         echo '<span class="bootstrap-timepicker">';
         if ($this->hasModel()) {
